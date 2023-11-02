@@ -1,0 +1,14 @@
+C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\bin\Debug\net7.0\FerretiaLinqCristian.exe
+C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\bin\Debug\net7.0\FerretiaLinqCristian.deps.json
+C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\bin\Debug\net7.0\FerretiaLinqCristian.runtimeconfig.json
+C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\bin\Debug\net7.0\FerretiaLinqCristian.dll
+C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\bin\Debug\net7.0\FerretiaLinqCristian.pdb
+C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\obj\Debug\net7.0\FerretiaLinqCristian.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\obj\Debug\net7.0\FerretiaLinqCristian.AssemblyInfoInputs.cache
+C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\obj\Debug\net7.0\FerretiaLinqCristian.AssemblyInfo.cs
+C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\obj\Debug\net7.0\FerretiaLinqCristian.csproj.CoreCompileInputs.cache
+C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\obj\Debug\net7.0\FerretiaLinqCristian.dll
+C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\obj\Debug\net7.0\refint\FerretiaLinqCristian.dll
+C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\obj\Debug\net7.0\FerretiaLinqCristian.pdb
+C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\obj\Debug\net7.0\FerretiaLinqCristian.genruntimeconfig.cache
+C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\obj\Debug\net7.0\ref\FerretiaLinqCristian.dll
