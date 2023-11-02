@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\APM02-49\\Documents\\CristianReyes\\.NET\\proyectos.NET\\FerretiaLinqCristian\\FerretiaLinqCristian.csproj": {}
+    "E:\\CAMPUSLAND\\.NET\\proyectos.NET\\FerretiaLinqCristianReyes\\FerretiaLinqCristian.csproj": {}
   },
   "projects": {
-    "C:\\Users\\APM02-49\\Documents\\CristianReyes\\.NET\\proyectos.NET\\FerretiaLinqCristian\\FerretiaLinqCristian.csproj": {
+    "E:\\CAMPUSLAND\\.NET\\proyectos.NET\\FerretiaLinqCristianReyes\\FerretiaLinqCristian.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\APM02-49\\Documents\\CristianReyes\\.NET\\proyectos.NET\\FerretiaLinqCristian\\FerretiaLinqCristian.csproj",
+        "projectUniqueName": "E:\\CAMPUSLAND\\.NET\\proyectos.NET\\FerretiaLinqCristianReyes\\FerretiaLinqCristian.csproj",
         "projectName": "FerretiaLinqCristian",
-        "projectPath": "C:\\Users\\APM02-49\\Documents\\CristianReyes\\.NET\\proyectos.NET\\FerretiaLinqCristian\\FerretiaLinqCristian.csproj",
-        "packagesPath": "C:\\Users\\APM02-49\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\APM02-49\\Documents\\CristianReyes\\.NET\\proyectos.NET\\FerretiaLinqCristian\\obj\\",
+        "projectPath": "E:\\CAMPUSLAND\\.NET\\proyectos.NET\\FerretiaLinqCristianReyes\\FerretiaLinqCristian.csproj",
+        "packagesPath": "C:\\Users\\fojc\\.nuget\\packages\\",
+        "outputPath": "E:\\CAMPUSLAND\\.NET\\proyectos.NET\\FerretiaLinqCristianReyes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\APM02-49\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\fojc\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"

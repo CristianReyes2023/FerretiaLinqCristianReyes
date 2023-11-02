@@ -25,8 +25,10 @@ internal class Program
                     core.Acomprar();
                     break;
                 case '4':
+                    core.FacturasEnero();
                     break;
                 case '5':
+                    
                     break;
                 case '6':
                     break;

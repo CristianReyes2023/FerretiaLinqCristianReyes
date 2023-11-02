@@ -12,3 +12,17 @@ C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristia
 C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\obj\Debug\net7.0\FerretiaLinqCristian.pdb
 C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\obj\Debug\net7.0\FerretiaLinqCristian.genruntimeconfig.cache
 C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\obj\Debug\net7.0\ref\FerretiaLinqCristian.dll
+E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\bin\Debug\net7.0\FerretiaLinqCristian.exe
+E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\bin\Debug\net7.0\FerretiaLinqCristian.deps.json
+E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\bin\Debug\net7.0\FerretiaLinqCristian.runtimeconfig.json
+E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\bin\Debug\net7.0\FerretiaLinqCristian.dll
+E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\bin\Debug\net7.0\FerretiaLinqCristian.pdb
+E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\obj\Debug\net7.0\FerretiaLinqCristian.GeneratedMSBuildEditorConfig.editorconfig
+E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\obj\Debug\net7.0\FerretiaLinqCristian.AssemblyInfoInputs.cache
+E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\obj\Debug\net7.0\FerretiaLinqCristian.AssemblyInfo.cs
+E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\obj\Debug\net7.0\FerretiaLinqCristian.csproj.CoreCompileInputs.cache
+E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\obj\Debug\net7.0\FerretiaLinqCristian.dll
+E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\obj\Debug\net7.0\refint\FerretiaLinqCristian.dll
+E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\obj\Debug\net7.0\FerretiaLinqCristian.pdb
+E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\obj\Debug\net7.0\FerretiaLinqCristian.genruntimeconfig.cache
+E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\obj\Debug\net7.0\ref\FerretiaLinqCristian.dll

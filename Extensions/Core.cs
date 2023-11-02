@@ -24,15 +24,34 @@ namespace FerretiaLinqCristian.Extensions
         };
         List<Factura> _factura = new List<Factura>()
         {
-            new Factura(){IdFactura="125",Fecha=DateOnly.Parse("02-10-2023"),IdCliente = 101,TotalFactura = 250000},
-            new Factura(){IdFactura="135",Fecha=DateOnly.Parse("05-10-2023"),IdCliente = 103,TotalFactura = 220000},
-            new Factura(){IdFactura="525",Fecha=DateOnly.Parse("07-10-2023"),IdCliente = 102,TotalFactura = 200000},
+            new Factura(){IdFactura="125",Fecha=new DateOnly(2023, 1, 2),IdCliente = 101,TotalFactura = 190000},
+            new Factura(){IdFactura="135",Fecha=new DateOnly(2023, 1, 15),IdCliente = 103,TotalFactura = 370000},
+            new Factura(){IdFactura="525",Fecha=new DateOnly(2023, 3, 6),IdCliente = 102,TotalFactura = 180000},
         };
         List<DetalleFactura> _detallefactura = new List<DetalleFactura>()
         {
             new DetalleFactura(){
-                IdDetalleFactura = 1,IdFactura=125, ProductosDetalle = new List<ProductoDetalle>{
-                    new ProductoDetalle(){Id = 1, Cantidad = 2, Valor = 25000}
+                IdDetalleFactura = 1,IdFactura="125", ProductosDetalle = new List<ProductoDetalle>{
+                    new ProductoDetalle(){Id = 1, Cantidad = 2, Valor = 25000,ValorTotalPro=50000},
+                    new ProductoDetalle(){Id = 3, Cantidad = 5, Valor = 8000,ValorTotalPro=40000},
+                    new ProductoDetalle(){Id = 5, Cantidad = 2, Valor = 50000,ValorTotalPro=100000}
+                    
+                }
+            },
+            new DetalleFactura(){
+                IdDetalleFactura = 2,IdFactura="135", ProductosDetalle = new List<ProductoDetalle>{
+                    new ProductoDetalle(){Id = 1, Cantidad = 10, Valor = 25000,ValorTotalPro=250000},
+                    new ProductoDetalle(){Id = 4, Cantidad = 1, Valor = 20000,ValorTotalPro=20000},
+                    new ProductoDetalle(){Id = 5, Cantidad = 2, Valor = 50000,ValorTotalPro=100000}
+                    
+                }
+            },
+            new DetalleFactura(){
+                IdDetalleFactura = 3,IdFactura="525", ProductosDetalle = new List<ProductoDetalle>{
+                    new ProductoDetalle(){Id = 1, Cantidad = 5, Valor = 25000,ValorTotalPro=100000},
+                    new ProductoDetalle(){Id = 2, Cantidad = 2, Valor = 30000,ValorTotalPro=60000},
+                    new ProductoDetalle(){Id = 4, Cantidad = 1, Valor = 20000,ValorTotalPro=20000}
+                    
                 }
             }
         };
@@ -85,6 +104,18 @@ namespace FerretiaLinqCristian.Extensions
             Console.WriteLine("Productos que están por agotarse");
             var result = _productos.Where(x => x.Cantidad < x.StockMin).ToList<Productos>();
             result.ForEach(x => Console.WriteLine($"{contador++}: {x.NombreProducto} y cantidad a comprar {x.StockMax-x.Cantidad}"));
+            Console.WriteLine("Enter para menu principal");
+            Console.ReadKey();
+
+            Console.Clear();
+        }
+        public void FacturasEnero()
+        {
+            Console.Clear();
+            int contador = 1;
+            Console.WriteLine("Facturas del mes de enero");
+            var result = _factura.Where(x => x.Fecha.Month == 1 ).ToList<Factura>();
+            result.ForEach(x => Console.WriteLine($"{contador++}: {x.Fecha:dd-MM-yyyy}"));
             Console.WriteLine("Enter para menu principal");
             Console.ReadKey();
 

@@ -10,5 +10,6 @@ namespace FerretiaLinqCristian.Classes
         public int Id { get; set; }
         public int Cantidad { get; set; }
         public int Valor { get; set; }
+        public int ValorTotalPro {get;set;}
     }
 }
