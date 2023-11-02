@@ -24,34 +24,34 @@ namespace FerretiaLinqCristian.Extensions
         };
         List<Factura> _factura = new List<Factura>()
         {
-            new Factura(){IdFactura="125",Fecha=new DateOnly(2023, 1, 2),IdCliente = 101,TotalFactura = 190000},
-            new Factura(){IdFactura="135",Fecha=new DateOnly(2023, 1, 15),IdCliente = 103,TotalFactura = 370000},
-            new Factura(){IdFactura="525",Fecha=new DateOnly(2023, 3, 6),IdCliente = 102,TotalFactura = 180000},
+            new Factura(){IdFactura="101",Fecha=new DateOnly(2023, 1, 2),IdCliente = 101,TotalFactura = 190000},
+            new Factura(){IdFactura="102",Fecha=new DateOnly(2023, 1, 15),IdCliente = 103,TotalFactura = 320000},
+            new Factura(){IdFactura="103",Fecha=new DateOnly(2023, 3, 6),IdCliente = 102,TotalFactura = 180000},
         };
         List<DetalleFactura> _detallefactura = new List<DetalleFactura>()
         {
             new DetalleFactura(){
-                IdDetalleFactura = 1,IdFactura="125", ProductosDetalle = new List<ProductoDetalle>{
+                IdDetalleFactura = 1,IdFactura="101", ProductosDetalle = new List<ProductoDetalle>{
                     new ProductoDetalle(){Id = 1, Cantidad = 2, Valor = 25000,ValorTotalPro=50000},
                     new ProductoDetalle(){Id = 3, Cantidad = 5, Valor = 8000,ValorTotalPro=40000},
                     new ProductoDetalle(){Id = 5, Cantidad = 2, Valor = 50000,ValorTotalPro=100000}
-                    
+
                 }
             },
             new DetalleFactura(){
-                IdDetalleFactura = 2,IdFactura="135", ProductosDetalle = new List<ProductoDetalle>{
-                    new ProductoDetalle(){Id = 1, Cantidad = 10, Valor = 25000,ValorTotalPro=250000},
+                IdDetalleFactura = 2,IdFactura="102", ProductosDetalle = new List<ProductoDetalle>{
+                    new ProductoDetalle(){Id = 1, Cantidad = 8, Valor = 25000,ValorTotalPro=200000},
                     new ProductoDetalle(){Id = 4, Cantidad = 1, Valor = 20000,ValorTotalPro=20000},
                     new ProductoDetalle(){Id = 5, Cantidad = 2, Valor = 50000,ValorTotalPro=100000}
-                    
+
                 }
             },
             new DetalleFactura(){
-                IdDetalleFactura = 3,IdFactura="525", ProductosDetalle = new List<ProductoDetalle>{
+                IdDetalleFactura = 3,IdFactura="103", ProductosDetalle = new List<ProductoDetalle>{
                     new ProductoDetalle(){Id = 1, Cantidad = 5, Valor = 25000,ValorTotalPro=100000},
                     new ProductoDetalle(){Id = 2, Cantidad = 2, Valor = 30000,ValorTotalPro=60000},
                     new ProductoDetalle(){Id = 4, Cantidad = 1, Valor = 20000,ValorTotalPro=20000}
-                    
+
                 }
             }
         };
@@ -103,7 +103,7 @@ namespace FerretiaLinqCristian.Extensions
             int contador = 1;
             Console.WriteLine("Productos que están por agotarse");
             var result = _productos.Where(x => x.Cantidad < x.StockMin).ToList<Productos>();
-            result.ForEach(x => Console.WriteLine($"{contador++}: {x.NombreProducto} y cantidad a comprar {x.StockMax-x.Cantidad}"));
+            result.ForEach(x => Console.WriteLine($"{contador++}: {x.NombreProducto} y cantidad a comprar {x.StockMax - x.Cantidad}"));
             Console.WriteLine("Enter para menu principal");
             Console.ReadKey();
 
@@ -114,32 +114,82 @@ namespace FerretiaLinqCristian.Extensions
             Console.Clear();
             int contador = 1;
             Console.WriteLine("Facturas del mes de enero");
-            var result = _factura.Where(x => x.Fecha.Month == 1 ).ToList<Factura>();
+            var result = _factura.Where(x => x.Fecha.Month == 1).ToList<Factura>();
             result.ForEach(x => Console.WriteLine($"{contador++}: {x.Fecha:dd-MM-yyyy}"));
             Console.WriteLine("Enter para menu principal");
             Console.ReadKey();
 
             Console.Clear();
         }
+        public void ProductosVendidos()
+        {
+            Console.Clear();
+            int contador = 1;
+            Console.WriteLine("Listado de Facturas");
+            foreach (var item in _factura)
+            {
+                Console.WriteLine($"{contador}: Id de la factura es: {item.IdFactura}");
+                contador++;
+            }
+            Console.WriteLine("Ingresa el Id de la factura que desees listar: ");
+            string idlistar = Console.ReadLine();
+            if (idlistar == "101")
+            {
+                Console.WriteLine("Id Factura 101");
+                Console.WriteLine("|Id|Unit|-VUnit-|VParcial|");
+                var result = _detallefactura.Where(x => x.IdFactura == "101");
+                foreach (var item in result)
+                {
+                    foreach (var productoD in item.ProductosDetalle)
+                        Console.WriteLine("|{0,-2}|{1,-4}|{2,-7}|{3,-8}|", productoD.Id, productoD.Cantidad, productoD.Valor, productoD.ValorTotalPro);
+                }
+            }
+            else if (idlistar == "102")
+            {
+                Console.WriteLine("Id Factura 102");
+                Console.WriteLine("|Id|Unit|-VUnit-|VParcial|");
+                var result = _detallefactura.Where(x => x.IdFactura == "102");
+                foreach (var item in result)
+                {
+                    foreach (var productoD in item.ProductosDetalle)
+                        Console.WriteLine("|{0,-2}|{1,-4}|{2,-7}|{3,-8}|", productoD.Id, productoD.Cantidad, productoD.Valor, productoD.ValorTotalPro);
+                }
+            }
+            else if (idlistar == "103")
+            {
+                Console.WriteLine("Id Factura 103");
+                Console.WriteLine("|Id|Unit|-VUnit-|VParcial|");
+                var result = _detallefactura.Where(x => x.IdFactura == "103");
+                foreach (var item in result)
+                {
+                    foreach (var productoD in item.ProductosDetalle)
+                        Console.WriteLine("|{0,-2}|{1,-4}|{2,-7}|{3,-8}|", productoD.Id, productoD.Cantidad, productoD.Valor, productoD.ValorTotalPro);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Ingreso de Id incorrecto.");
+            }
+            Console.WriteLine("Enter para menu principal");
+            Console.ReadKey();
 
+            Console.Clear();
+        }
+        public void ValorInventario()
+        {
+            Console.Clear();
+            int ValorTotal = 0;
+            foreach (var item in _productos)
+            {
+                int valorparcial = 0;
+                valorparcial=item.PrecioUnit*item.Cantidad;
+                ValorTotal=ValorTotal+valorparcial;
+            }
+            Console.WriteLine($"El valor total del inventario es: {ValorTotal}");
 
-        // public bool GoMenu()
-        // {
-        //     Console.WriteLine("1.Volver al menu principal.");
-        //     Console.WriteLine("2.Salir del programa.");
-        //     bool AddMenu = true;
-        //     string optionmenu = Console.ReadLine();
-        //     int typeMenu = Int16.Parse(optionmenu);
-        //     if (typeMenu == 1)
-        //     {
-        //         AddMenu = true;
-        //     }
-        //     else
-        //     {
-        //         AddMenu = false;
-        //     }
-        //     return AddMenu;
-        // }
-
+            Console.WriteLine("Enter para menu principal");
+            Console.ReadKey();
+            Console.Clear();
+        }
     }
 }

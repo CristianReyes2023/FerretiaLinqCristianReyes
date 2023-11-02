@@ -28,9 +28,10 @@ internal class Program
                     core.FacturasEnero();
                     break;
                 case '5':
-                    
+                    core.ProductosVendidos();
                     break;
                 case '6':
+                core.ValorInventario();
                     break;
                 case '0':
                     AddMenu = false;
