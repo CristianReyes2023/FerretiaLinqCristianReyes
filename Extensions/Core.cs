@@ -133,42 +133,17 @@ namespace FerretiaLinqCristian.Extensions
             }
             Console.WriteLine("Ingresa el Id de la factura que desees listar: ");
             string idlistar = Console.ReadLine();
-            if (idlistar == "101")
-            {
-                Console.WriteLine("Id Factura 101");
-                Console.WriteLine("|Id|Unit|-VUnit-|VParcial|");
-                var result = _detallefactura.Where(x => x.IdFactura == "101");
-                foreach (var item in result)
-                {
-                    foreach (var productoD in item.ProductosDetalle)
-                        Console.WriteLine("|{0,-2}|{1,-4}|{2,-7}|{3,-8}|", productoD.Id, productoD.Cantidad, productoD.Valor, productoD.ValorTotalPro);
-                }
-            }
-            else if (idlistar == "102")
-            {
-                Console.WriteLine("Id Factura 102");
-                Console.WriteLine("|Id|Unit|-VUnit-|VParcial|");
-                var result = _detallefactura.Where(x => x.IdFactura == "102");
-                foreach (var item in result)
-                {
-                    foreach (var productoD in item.ProductosDetalle)
-                        Console.WriteLine("|{0,-2}|{1,-4}|{2,-7}|{3,-8}|", productoD.Id, productoD.Cantidad, productoD.Valor, productoD.ValorTotalPro);
-                }
-            }
-            else if (idlistar == "103")
-            {
-                Console.WriteLine("Id Factura 103");
-                Console.WriteLine("|Id|Unit|-VUnit-|VParcial|");
-                var result = _detallefactura.Where(x => x.IdFactura == "103");
-                foreach (var item in result)
-                {
-                    foreach (var productoD in item.ProductosDetalle)
-                        Console.WriteLine("|{0,-2}|{1,-4}|{2,-7}|{3,-8}|", productoD.Id, productoD.Cantidad, productoD.Valor, productoD.ValorTotalPro);
-                }
-            }
-            else
+            var result = _detallefactura.Where(x => x.IdFactura == idlistar);
+            if (result.Count() == 0)
             {
                 Console.WriteLine("Ingreso de Id incorrecto.");
+            }
+            foreach (var item in result)
+            {
+                Console.WriteLine($"Id Factura {idlistar}");
+                Console.WriteLine("|Id|Unit|-VUnit-|VParcial|");
+                foreach (var productoD in item.ProductosDetalle)
+                    Console.WriteLine("|{0,-2}|{1,-4}|{2,-7}|{3,-8}|", productoD.Id, productoD.Cantidad, productoD.Valor, productoD.ValorTotalPro);
             }
             Console.WriteLine("Enter para menu principal");
             Console.ReadKey();
@@ -182,8 +157,8 @@ namespace FerretiaLinqCristian.Extensions
             foreach (var item in _productos)
             {
                 int valorparcial = 0;
-                valorparcial=item.PrecioUnit*item.Cantidad;
-                ValorTotal=ValorTotal+valorparcial;
+                valorparcial = item.PrecioUnit * item.Cantidad;
+                ValorTotal = ValorTotal + valorparcial;
             }
             Console.WriteLine($"El valor total del inventario es: {ValorTotal}");
 
