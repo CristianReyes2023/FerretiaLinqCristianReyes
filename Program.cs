@@ -12,6 +12,18 @@ internal class Program
             Core core = new Core();
             core.MENU();
             string option = Console.ReadLine();
+            if (option.Length > 1)
+            {
+                while (option.Length > 1 )
+                {
+                    Console.WriteLine("Se ingreso un opción incorrecta");
+                    Console.ReadKey();
+                    Console.Clear();
+                    core.MENU();
+                    string option2 = Console.ReadLine();
+                    option = option2;
+                }
+            }
             char typeOrder = Char.Parse(option);
             switch (typeOrder)
             {
@@ -31,12 +43,15 @@ internal class Program
                     core.ProductosVendidos();
                     break;
                 case '6':
-                core.ValorInventario();
+                    core.ValorInventario();
                     break;
                 case '0':
                     AddMenu = false;
                     break;
                 default:
+                    Console.WriteLine("Se ingreso un opción incorrecta");
+                    Console.ReadKey();
+                    Console.Clear();
                     break;
             }
         }
