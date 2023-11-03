@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "bONSpkwQETW8XO+hbmP5aYaxiE+1QUl3ksKhGRy0n9OFsCVbanNcCDqXyTDL+Kx9jH5yC4KwlEYNBlkVvlmQMg==",
+  "dgSpecHash": "Jm8U63/nLPT7byaOPVsMWvv+m1xgtomDLm+nGT2G9X4wFd9bPs7FQS6nbsIWYoEMxEymqHRlWPRXVMtlRPf6sw==",
   "success": true,
   "projectFilePath": "C:\\Users\\APM02-49\\Documents\\CristianReyes\\.NET\\proyectos.NET\\FerretiaLinqCristian\\FerretiaLinqCristian.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\APM02-49\\.nuget\\packages\\consoletables\\2.6.1\\consoletables.2.6.1.nupkg.sha512"
+  ],
   "logs": []
 }

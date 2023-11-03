@@ -26,3 +26,6 @@ E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\obj\Debug\net7.0\refi
 E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\obj\Debug\net7.0\FerretiaLinqCristian.pdb
 E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\obj\Debug\net7.0\FerretiaLinqCristian.genruntimeconfig.cache
 E:\CAMPUSLAND\.NET\proyectos.NET\FerretiaLinqCristianReyes\obj\Debug\net7.0\ref\FerretiaLinqCristian.dll
+C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\bin\Debug\net7.0\ConsoleTables.dll
+C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\obj\Debug\net7.0\FerretiaLinqCristian.csproj.AssemblyReference.cache
+C:\Users\APM02-49\Documents\CristianReyes\.NET\proyectos.NET\FerretiaLinqCristian\obj\Debug\net7.0\FerretiaLinqCristian.csproj.CopyComplete

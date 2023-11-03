@@ -1,7 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Net.Mail;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using ConsoleTables;
 using FerretiaLinqCristian.Classes;
 
 namespace FerretiaLinqCristian.Extensions
@@ -74,15 +78,15 @@ namespace FerretiaLinqCristian.Extensions
         {
             Console.Clear();
             int contador = 1;
-            Console.WriteLine("Productos");
+            var table = new ConsoleTable("#", "Productos");
             foreach (var item in _productos)
             {
-                Console.WriteLine($"{contador}: {item.NombreProducto}");
+                table.AddRow(contador, item.NombreProducto);
                 contador++;
             }
+            table.Write(Format.Alternative);
             Console.WriteLine("Enter para menu principal");
             Console.ReadKey();
-
             Console.Clear();
         }
         public void CasiAgotado()
@@ -90,20 +94,23 @@ namespace FerretiaLinqCristian.Extensions
             Console.Clear();
             int contador = 1;
             Console.WriteLine("Productos que están por agotarse");
+            var table = new ConsoleTable("#", "Producto");
             var result = _productos.Where(x => x.Cantidad < x.StockMin).ToList<Productos>();
-            result.ForEach(x => Console.WriteLine($"{contador++}: {x.NombreProducto}"));
+            result.ForEach(x => table.AddRow(contador, x.NombreProducto));
+            table.Write(Format.Alternative);
             Console.WriteLine("Enter para menu principal");
             Console.ReadKey();
-
             Console.Clear();
         }
         public void Acomprar()
         {
             Console.Clear();
             int contador = 1;
-            Console.WriteLine("Productos que están por agotarse");
+            Console.WriteLine("Productos que están por agotarse.");
+            var table = new ConsoleTable("#", "Producto", "Cantidad a compra");
             var result = _productos.Where(x => x.Cantidad < x.StockMin).ToList<Productos>();
-            result.ForEach(x => Console.WriteLine($"{contador++}: {x.NombreProducto}, cantidad a comprar {x.StockMax - x.Cantidad}"));
+            result.ForEach(x => table.AddRow(contador, x.NombreProducto, x.StockMax - x.Cantidad));
+            table.Write(Format.Alternative);
             Console.WriteLine("Enter para menu principal");
             Console.ReadKey();
 
@@ -116,6 +123,7 @@ namespace FerretiaLinqCristian.Extensions
             int mesbuscar = 0;
             Console.WriteLine("Ingresa el numero del mes a buscar");
             mesbuscar = Int16.Parse(Console.ReadLine());
+            Console.Clear();
             if (mesbuscar > 12)
             {
                 Console.WriteLine("Mes no valido");
@@ -123,10 +131,11 @@ namespace FerretiaLinqCristian.Extensions
             var result = _factura.Where(x => x.Fecha.Month == mesbuscar).ToList<Factura>();
             if (mesbuscar < 12 && result.Count() != 0)
             {
-                Console.WriteLine("Facturas del mes");
-                result.ForEach(x => Console.WriteLine($"{contador++}: {x.Fecha:dd-MM-yyyy}"));
+                var table = new ConsoleTable("#",$"Factura");
+                result.ForEach(x => table.AddRow(contador, x.Fecha.ToString("dd-MM-yyyy")));
+                table.Write(Format.Alternative);
             }
-            if (result.Count() == 0 && mesbuscar<12)
+            if (result.Count() == 0 && mesbuscar < 12)
             {
                 Console.WriteLine("No se encontraron Facturas");
             }
@@ -154,9 +163,10 @@ namespace FerretiaLinqCristian.Extensions
             foreach (var item in result)
             {
                 Console.WriteLine($"Id Factura {idlistar}");
-                Console.WriteLine("|Id|Unit|-VUnit-|VParcial|");
+                var table = new ConsoleTable("Id", "Unit", "VUnit", "VParcial");
                 foreach (var productoD in item.ProductosDetalle)
-                    Console.WriteLine("|{0,-2}|{1,-4}|{2,-7}|{3,-8}|", productoD.Id, productoD.Cantidad, productoD.Valor, productoD.ValorTotalPro);
+                    table.AddRow(productoD.Id, productoD.Cantidad, productoD.Valor, productoD.ValorTotalPro);
+                table.Write(Format.Alternative);
             }
             Console.WriteLine("Enter para menu principal");
             Console.ReadKey();
@@ -167,12 +177,16 @@ namespace FerretiaLinqCristian.Extensions
         {
             Console.Clear();
             int ValorTotal = 0;
+            var table = new ConsoleTable("Id", "Producto", "PrecioUnit", "Valor");
             foreach (var item in _productos)
             {
                 int valorparcial = 0;
+                table.AddRow(item.IdProducto, item.Cantidad, item.PrecioUnit, item.Cantidad * item.PrecioUnit);
                 valorparcial = item.PrecioUnit * item.Cantidad;
                 ValorTotal = ValorTotal + valorparcial;
             }
+            table.AddRow("","","TOTAL",ValorTotal);
+            table.Write(Format.Alternative);
             Console.WriteLine($"El valor total del inventario es: {ValorTotal}");
 
             Console.WriteLine("Enter para menu principal");
