@@ -63,7 +63,7 @@ namespace FerretiaLinqCristian.Extensions
             Console.WriteLine("1.Lista de productos del inventario");
             Console.WriteLine("2.Lista de productos a punto de agotarse");
             Console.WriteLine("3.Productos a comprar y cantidad que se debe comprar");
-            Console.WriteLine("4.Lista total de facturas del mes de enero del 2023");
+            Console.WriteLine("4.Lista total de facturas de cada mes.");
             Console.WriteLine("5.Listado de productos vendidos en determinada factura");
             Console.WriteLine("6.Calcular valor total del inventario");
             Console.WriteLine("0.Salir");
@@ -103,22 +103,35 @@ namespace FerretiaLinqCristian.Extensions
             int contador = 1;
             Console.WriteLine("Productos que están por agotarse");
             var result = _productos.Where(x => x.Cantidad < x.StockMin).ToList<Productos>();
-            result.ForEach(x => Console.WriteLine($"{contador++}: {x.NombreProducto} y cantidad a comprar {x.StockMax - x.Cantidad}"));
+            result.ForEach(x => Console.WriteLine($"{contador++}: {x.NombreProducto}, cantidad a comprar {x.StockMax - x.Cantidad}"));
             Console.WriteLine("Enter para menu principal");
             Console.ReadKey();
 
             Console.Clear();
         }
-        public void FacturasEnero()
+        public void Facturas()
         {
             Console.Clear();
             int contador = 1;
-            Console.WriteLine("Facturas del mes de enero");
-            var result = _factura.Where(x => x.Fecha.Month == 1).ToList<Factura>();
-            result.ForEach(x => Console.WriteLine($"{contador++}: {x.Fecha:dd-MM-yyyy}"));
+            int mesbuscar = 0;
+            Console.WriteLine("Ingresa el numero del mes a buscar");
+            mesbuscar = Int16.Parse(Console.ReadLine());
+            if (mesbuscar > 12)
+            {
+                Console.WriteLine("Mes no valido");
+            }
+            var result = _factura.Where(x => x.Fecha.Month == mesbuscar).ToList<Factura>();
+            if (mesbuscar < 12 && result.Count() != 0)
+            {
+                Console.WriteLine("Facturas del mes");
+                result.ForEach(x => Console.WriteLine($"{contador++}: {x.Fecha:dd-MM-yyyy}"));
+            }
+            if (result.Count() == 0 && mesbuscar<12)
+            {
+                Console.WriteLine("No se encontraron Facturas");
+            }
             Console.WriteLine("Enter para menu principal");
             Console.ReadKey();
-
             Console.Clear();
         }
         public void ProductosVendidos()

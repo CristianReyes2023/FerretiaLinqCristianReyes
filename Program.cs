@@ -37,7 +37,7 @@ internal class Program
                     core.Acomprar();
                     break;
                 case '4':
-                    core.FacturasEnero();
+                    core.Facturas();
                     break;
                 case '5':
                     core.ProductosVendidos();
